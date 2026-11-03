@@ -77,16 +77,32 @@ td:first-child{font-weight:700}
 footer{padding:26px 0;color:var(--mut);font-size:.88rem}
 @media(max-width:720px){.chain{grid-template-columns:1fr 1fr}.node{grid-template-columns:1fr}.node+.link{margin-left:24px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.section-img { width: 100%; max-width: 860px; height: auto; border-radius: 12px; border: 1px solid var(--line); margin: 24px auto 0; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+.hero-flex { display: grid; grid-template-columns: 1fr 340px; gap: 30px; align-items: center; }
+.hero-img-box { text-align: center; }
+.hero-img-box img { max-width: 100%; height: auto; border-radius: 14px; filter: drop-shadow(0 12px 24px rgba(0,0,0,0.15)); }
+.logo-badge { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; margin-bottom: 8px; }
+.logo-badge img { height: 28px; width: auto; object-fit: contain; }
+@media(max-width: 880px) { .hero-flex { grid-template-columns: 1fr; } }
+
 </style>
 </head>
 <body>
 <header class="hero"><div class="w">
  <div class="top"><b>An Phát Technology</b><a class="btn" href="#lien-he">Liên hệ</a></div>
  <div class="brand">Năng lực NGFW ngay trong router DrayTek Vigor3912S</div>
- <h1>Khách không mời lọt vào mạng? Vigor3912S tiễn họ ra cửa</h1>
- <p>Hệ thống của bạn đang gặp vấn đề gì? Với Vigor3912S, Suricata 8.x làm IDS/IPS, Zeek phân tích sâu từng giao thức, DraySOAR điều khiển Switch và Access Point DrayTek để ngăn mã độc lây lan nội bộ. Tất cả chạy ngay trong một thiết bị.</p>
- <div class="badges"><span>IDS/IPS</span><span>Tương đương NGFW</span><span>Suricata 8.x</span><span>Suricata + Zeek</span><span>DraySOAR</span><span>Chống lây lan nội bộ</span></div>
- <div class="btns"><a class="btn" href="#lien-he">Nhận tư vấn giải pháp</a><a class="btn alt" href="#ngfw">So sánh với NGFW</a></div>
+ <div class="hero-flex">
+  <div>
+   <h1>Khách không mời lọt vào mạng? Vigor3912S tiễn họ ra cửa</h1>
+   <p>Hệ thống của bạn đang gặp vấn đề gì? Với Vigor3912S, Suricata 8.x làm IDS/IPS, Zeek phân tích sâu từng giao thức, DraySOAR điều khiển Switch và Access Point DrayTek để ngăn mã độc lây lan nội bộ. Tất cả chạy ngay trong một thiết bị.</p>
+   <div class="badges"><span>IDS/IPS</span><span>Tương đương NGFW</span><span>Suricata 8.x</span><span>Suricata + Zeek</span><span>DraySOAR</span><span>Chống lây lan nội bộ</span></div>
+   <div class="btns"><a class="btn" href="#lien-he">Nhận tư vấn giải pháp</a><a class="btn alt" href="#ngfw">So sánh với NGFW</a></div>
+  </div>
+  <div class="hero-img-box">
+   <img src="images/draysoar-box.png" alt="DrayTek DraySOAR Platform" loading="eager">
+  </div>
+ </div>
  <div class="chain" aria-label="Chuỗi phòng thủ">
   <div class="k1"><b>Detect</b><span>Suricata và Zeek kiểm tra sâu gói tin</span></div>
   <div class="k2"><b>Alert</b><span>Chuông Web UI, Telegram</span></div>
@@ -104,14 +120,15 @@ footer{padding:26px 0;color:var(--mut);font-size:.88rem}
   <div class="card"><h3>Chặn đúng hướng</h3><p>Chặn IP đích để cắt kết nối ra máy chủ độc hại, hoặc chặn IP nguồn để cô lập máy trạm nhiễm mã độc trong LAN.</p></div>
  </div>
  <p class="lead" style="margin-top:18px;font-size:.92rem">Cơ chế chặn dựa trên log và Smart Action, nên có độ trễ rất ngắn thay vì drop gói tin ngay trong luồng.</p>
+ <img class="section-img" src="images/vigor3912s-firewall.png" alt="Vigor3912S IDS/IPS Smart Action Block">
 </div></section>
 
 <section class="alt"><div class="w">
  <h2>Phân tích gói tin chuyên sâu: Suricata và Zeek bổ trợ nhau</h2>
  <p class="lead">Hai công cụ nhìn cùng một luồng dữ liệu bằng hai cách. Một cái tìm dấu hiệu tấn công đã biết, một cái ghi lại hành vi để bạn điều tra và phát hiện điều chưa có chữ ký.</p>
  <div class="two">
-  <div class="card"><p class="big">Suricata 8.x</p><p>Engine IDS/IPS đa luồng, so khớp chữ ký theo thời gian thực.</p><ul><li>Kiểm tra sâu gói tin (DPI) và giải mã giao thức tầng ứng dụng</li><li>Rules CVE và Emerging Threats, tự cập nhật hằng ngày</li><li>Ra cảnh báo có Classification và Priority để Smart Action xử lý</li></ul></div>
-  <div class="card z"><p class="big">Zeek</p><p>Khung giám sát mạng, không dựa vào chữ ký mà ghi lại những gì thực sự diễn ra.</p><ul><li>Log có cấu trúc cho kết nối, DNS, HTTP, TLS, file</li><li>Soi hành vi bất thường: DNS tunneling, beacon định kỳ, quét chậm</li><li>Dữ liệu điều tra sau sự cố: ai nói chuyện với ai, lúc nào, bao lâu</li></ul></div>
+  <div class="card"><div class="logo-badge"><img src="images/suricata.jpg" alt="Suricata Logo"><span>Suricata 8.x</span></div><p>Engine IDS/IPS đa luồng, so khớp chữ ký theo thời gian thực.</p><ul><li>Kiểm tra sâu gói tin (DPI) và giải mã giao thức tầng ứng dụng</li><li>Rules CVE và Emerging Threats, tự cập nhật hằng ngày</li><li>Ra cảnh báo có Classification và Priority để Smart Action xử lý</li></ul></div>
+  <div class="card z"><div class="logo-badge"><img src="images/zeek.jpg" alt="Zeek Logo"><span>Zeek Security Monitoring</span></div><p>Khung giám sát mạng, không dựa vào chữ ký mà ghi lại những gì thực sự diễn ra.</p><ul><li>Log có cấu trúc cho kết nối, DNS, HTTP, TLS, file</li><li>Soi hành vi bất thường: DNS tunneling, beacon định kỳ, quét chậm</li><li>Dữ liệu điều tra sau sự cố: ai nói chuyện với ai, lúc nào, bao lâu</li></ul></div>
  </div>
 </div></section>
 
@@ -129,7 +146,9 @@ footer{padding:26px 0;color:var(--mut);font-size:.88rem}
 Và:   IP đích có danh tiếng xấu (IP Reputation)
 Thì:  Thông báo quản trị viên, tắt cổng Switch hoặc cô lập máy</pre>
  <p class="lead" style="font-size:.92rem">Ví dụ minh họa. Số lần, khoảng thời gian và hành động do quản trị viên cấu hình. Lệnh đến thiết bị qua TR-069 và VigorConnect; khả năng phản ứng tùy model và phiên bản firmware được hỗ trợ.</p>
- <p>DraySOAR còn hợp nhất sự kiện, máy bị ảnh hưởng và mức độ phơi nhiễm lỗ hổng (CVE, CVSS, KEV, EPSS) vào một màn hình, để quản trị viên giao việc, điều tra, đóng sự cố và lưu hồ sơ. Xem thêm tại <a href="https://draysoar.draytek.vn">draysoar.draytek.vn</a>.</p>
+ <img class="section-img" src="images/ecosystem-response.png" alt="Phối hợp 4 lớp cô lập: Gateway, Switch, Access Point, EDR">
+ <img class="section-img" src="images/draysoar-console.png" alt="Giao diện quản lý tập trung DraySOAR Console">
+ <p style="margin-top:20px">DraySOAR còn hợp nhất sự kiện, máy bị ảnh hưởng và mức độ phơi nhiễm lỗ hổng (CVE, CVSS, KEV, EPSS) vào một màn hình, để quản trị viên giao việc, điều tra, đóng sự cố và lưu hồ sơ. Xem thêm tại <a href="https://draysoar.draytek.vn">draysoar.draytek.vn</a>.</p>
 </div></section>
 
 <section class="alt" id="ngfw"><div class="w">
