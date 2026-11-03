@@ -5,51 +5,58 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Vigor3912S + Suricata + DraySOAR | An Phát</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F5F7FA;--surf:#fff;--ink:#14213D;--mut:#55627A;--line:#D9DFE8;--navy:#1B2A4A;--or:#F37021;--red:#E2231A;--grn:#1E8E5A;--hero:#1B2A4A;--heroink:#fff;--code:#EEF1F6;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1628;--surf:#16223B;--ink:#E8EDF7;--mut:#9AA8C2;--line:#2A3858;--hero:#0A1224;--code:#0E1628;--grn:#3CC889;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0E1628;--surf:#16223B;--ink:#E8EDF7;--mut:#9AA8C2;--line:#2A3858;--hero:#0A1224;--code:#0E1628;--grn:#3CC889;color-scheme:dark}
+:root{--bg:#fff;--tint:#F0F6FE;--surf:#fff;--ink:#14213D;--hd:#1A4F9C;--mut:#4F5D75;--line:#D9E4F5;--navy:#1F6FD6;--blue:#1F6FD6;--red:#E2231A;--code:#F1F5FB;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1628;--tint:#121D35;--surf:#16223B;--ink:#E8EDF7;--hd:#fff;--mut:#9AA8C2;--line:#2A3858;--navy:#1B3F7E;--blue:#6FA0F5;--code:#0E1628;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0E1628;--tint:#121D35;--surf:#16223B;--ink:#E8EDF7;--hd:#fff;--mut:#9AA8C2;--line:#2A3858;--navy:#1B3F7E;--blue:#6FA0F5;--code:#0E1628;color-scheme:dark}
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "Be Vietnam Pro",system-ui,"Segoe UI",Arial,sans-serif}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Inter,"Be Vietnam Pro",system-ui,"Segoe UI",Arial,sans-serif}
 .w{max-width:1080px;margin:0 auto;padding:0 22px}
-h1,h2,h3{line-height:1.2;margin:0 0 .5em;letter-spacing:-.01em}
-h1{font-size:clamp(2rem,5.2vw,3.4rem);font-weight:800}
+h1,h2,h3{font-family:"Be Vietnam Pro",Inter,system-ui,sans-serif;color:var(--hd);line-height:1.2;margin:0 0 .5em;letter-spacing:-.01em}
+h1{font-size:clamp(2rem,5.2vw,3.3rem);font-weight:800}
 h2{font-size:clamp(1.5rem,3.2vw,2.1rem);font-weight:800}
 h3{font-size:1.1rem;font-weight:700}
 p{margin:0 0 1em;max-width:68ch}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--or);outline-offset:3px}
-.hero{background:var(--hero);color:var(--heroink);padding:64px 0 56px}
-.hero p{color:#C9D3E6;font-size:1.12rem}
-.hero .brand{font-weight:700;color:var(--or);margin-bottom:18px}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:16px 0 30px}
+.top b{font:800 1.2rem "Be Vietnam Pro",Inter,sans-serif;color:var(--hd)}
+.hero{background:linear-gradient(180deg,var(--tint),var(--bg));padding:0 0 56px}
+.hero .brand{font-weight:700;color:var(--blue);margin-bottom:14px}
+.hero p{color:var(--mut);font-size:1.12rem}
 .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.btn{display:inline-block;padding:13px 24px;border-radius:8px;font-weight:700;text-decoration:none;background:var(--or);color:#fff}
-.btn.alt{background:transparent;border:2px solid #5C6C8E;color:#fff}
-.chain{margin-top:44px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid #33456B;border-radius:12px;overflow:hidden}
-.chain div{padding:18px 16px;border-right:1px solid #33456B;background:rgba(255,255,255,.04)}
-.chain div:last-child{border-right:0}
-.chain b{display:block;font-size:1.15rem;margin-bottom:2px}
-.chain span{font-size:.9rem;color:#B6C2DA}
-.chain .k1 b{color:#7FB2FF}.chain .k2 b{color:#FFC36B}.chain .k3 b{color:#9BE3C0}.chain .k4 b{color:#FF8A82}
+.btn{display:inline-block;padding:13px 24px;border-radius:8px;font-weight:700;text-decoration:none;background:var(--red);color:#fff}
+.top .btn{padding:9px 18px}
+.btn.alt{background:transparent;border:2px solid var(--blue);color:var(--blue)}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0}
+.badges span{border:1px solid var(--line);border-radius:99px;padding:5px 14px;font-weight:700;font-size:.92rem;color:var(--hd);background:var(--surf)}
+.badges span:first-child,.badges span:nth-child(2){background:var(--navy);border-color:var(--navy);color:#fff}
+.chain{margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.chain div{background:var(--surf);border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:10px;padding:16px}
+.chain .k4{border-top-color:var(--red)}
+.chain b{display:block;font-size:1.15rem;color:var(--hd);margin-bottom:2px}
+.chain span{font-size:.92rem;color:var(--mut)}
 section{padding:60px 0}
-section.alt{background:var(--surf);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+section.alt{background:var(--tint)}
 .lead{color:var(--mut)}
 .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 .card{background:var(--surf);border:1px solid var(--line);border-radius:10px;padding:20px}
-.alt .card{background:var(--bg)}
 .card p{margin:0;color:var(--mut);font-size:.97rem}
+.two{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-top:24px}
+.two .card{border-top:4px solid var(--blue)}
+.two .card.z{border-top-color:var(--navy)}
+.two ul{margin:10px 0 0;padding-left:1.1em;color:var(--mut);font-size:.97rem}
+.big{font:800 clamp(1.3rem,3vw,1.7rem) "Be Vietnam Pro",Inter,sans-serif;color:var(--hd);margin:0 0 .4em}
 .topo{display:grid;gap:0;margin-top:28px}
 .node{display:grid;grid-template-columns:200px 1fr;gap:20px;align-items:start;padding:20px;background:var(--surf);border:1px solid var(--line);border-radius:10px}
-.node+.link{height:26px;margin-left:100px;border-left:3px dashed var(--or)}
-.node h3{margin:0;color:var(--navy)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .node h3{color:#fff}}
-.node.core{border:2px solid var(--or)}
+.node+.link{height:26px;margin-left:100px;border-left:3px dashed var(--blue)}
+.node h3{margin:0}
+.node.core{border:2px solid var(--blue)}
 .node ul{margin:0;padding-left:1.1em;color:var(--mut);font-size:.97rem}
 .node small{display:block;color:var(--mut);margin-top:4px;font-size:.85rem}
-.tag{display:inline-block;font-size:.8rem;font-weight:700;padding:2px 9px;border-radius:99px;background:var(--code);border:1px solid var(--line);margin:0 6px 4px 0}
+.tag{display:inline-block;font-size:.8rem;font-weight:700;padding:2px 9px;border-radius:99px;background:var(--tint);border:1px solid var(--line);color:var(--hd);margin:0 6px 4px 0}
 ol.flow{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:14px;counter-reset:s}
 ol.flow li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
 ol.flow li::before{content:counter(s);width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:800}
@@ -58,34 +65,26 @@ ol.flow b{display:block}
 ol.flow span{color:var(--mut);font-size:.97rem}
 pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto;font:500 .88rem/1.5 ui-monospace,Consolas,monospace;margin:10px 0}
 .table{overflow-x:auto;margin-top:22px}
-table{border-collapse:collapse;width:100%;min-width:560px;font-size:.96rem}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.96rem;background:var(--surf)}
 th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
 th{background:var(--navy);color:#fff}
 td:first-child{font-weight:700}
-.warn{border-left:5px solid var(--or);background:var(--surf);padding:16px 20px;border-radius:0 8px 8px 0;margin-top:24px}
+.warn{border-left:5px solid var(--red);background:var(--surf);padding:16px 20px;border-radius:0 8px 8px 0;margin-top:24px}
 .warn p{margin:0}
 .cta{background:var(--navy);color:#fff;text-align:center;padding:64px 0}
-.cta p{margin:0 auto 1em;color:#C9D3E6}
+.cta h2{color:#fff}
+.cta p{margin:0 auto 1em;color:#D5E1F5}
 footer{padding:26px 0;color:var(--mut);font-size:.88rem}
-.badges{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0}
-.badges span{border:1px solid #5C6C8E;border-radius:99px;padding:5px 14px;font-weight:700;font-size:.92rem;color:#fff;background:rgba(255,255,255,.06)}
-.badges span:first-child,.badges span:nth-child(2){background:var(--or);border-color:var(--or)}
-.two{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-top:24px}
-.two .card{border-top:4px solid var(--or)}
-.two .card.z{border-top-color:var(--navy)}
-.two ul{margin:10px 0 0;padding-left:1.1em;color:var(--mut);font-size:.97rem}
-.big{font-size:clamp(1.3rem,3vw,1.7rem);font-weight:800;color:var(--navy);margin:0 0 .4em}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .big{color:#fff}}
-td.y{color:var(--grn);font-weight:700}
-@media(max-width:720px){.chain{grid-template-columns:1fr 1fr}.chain div:nth-child(2){border-right:0}.chain div:nth-child(-n+2){border-bottom:1px solid #33456B}.node{grid-template-columns:1fr}.node+.link{margin-left:24px}}
+@media(max-width:720px){.chain{grid-template-columns:1fr 1fr}.node{grid-template-columns:1fr}.node+.link{margin-left:24px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 <header class="hero"><div class="w">
- <div class="brand">An Phát Technology | Nhà phân phối DrayTek chính hãng tại Việt Nam</div>
- <h1>Năng lực của một NGFW, đặt ngay trong router Vigor3912S</h1>
- <p>Suricata 8.x làm IDS/IPS, Zeek phân tích sâu từng giao thức, DraySOAR điều khiển cả Switch và Access Point DrayTek để ngăn mã độc lây lan trong mạng nội bộ. Tất cả chạy ngay trên Vigor3912S.</p>
+ <div class="top"><b>An Phát Technology</b><a class="btn" href="#lien-he">Liên hệ</a></div>
+ <div class="brand">Năng lực NGFW ngay trong router DrayTek Vigor3912S</div>
+ <h1>Khách không mời lọt vào mạng? Vigor3912S tiễn họ ra cửa</h1>
+ <p>Hệ thống của bạn đang gặp vấn đề gì? Với Vigor3912S, Suricata 8.x làm IDS/IPS, Zeek phân tích sâu từng giao thức, DraySOAR điều khiển Switch và Access Point DrayTek để ngăn mã độc lây lan nội bộ. Tất cả chạy ngay trong một thiết bị.</p>
  <div class="badges"><span>IDS/IPS</span><span>Tương đương NGFW</span><span>Suricata 8.x</span><span>Suricata + Zeek</span><span>DraySOAR</span><span>Chống lây lan nội bộ</span></div>
  <div class="btns"><a class="btn" href="#lien-he">Nhận tư vấn giải pháp</a><a class="btn alt" href="#ngfw">So sánh với NGFW</a></div>
  <div class="chain" aria-label="Chuỗi phòng thủ">
@@ -118,7 +117,7 @@ td.y{color:var(--grn);font-weight:700}
 
 <section><div class="w">
  <h2>DraySOAR: từ cảnh báo đến cô lập, ngăn mã độc lây lan trong mạng nội bộ</h2>
- <p class="lead">Chặn IP bên ngoài chỉ giải quyết một nửa bài toán. Khi một máy trong LAN đã nhiễm, nguy cơ lớn nhất là nó lây sang máy khác. DraySOAR gom tín hiệu từ Suricata, Zeek, IP Reputation, DrayEDR, Windows Defender và WinRisk, rồi dùng Playbook điều khiển đúng thiết bị để cô lập nguồn lây.</p>
+ <p class="lead">Mã độc rất thích “đi chơi” sang máy hàng xóm. Chặn IP bên ngoài chỉ giải quyết một nửa bài toán. Khi một máy trong LAN đã nhiễm, nguy cơ lớn nhất là nó lây sang máy khác. DraySOAR gom tín hiệu từ Suricata, Zeek, IP Reputation, DrayEDR, Windows Defender và WinRisk, rồi dùng Playbook điều khiển đúng thiết bị để cô lập nguồn lây.</p>
  <div class="grid">
   <div class="card"><h3>Gateway: chặn</h3><p>Chặn lưu lượng từ IP bên ngoài đáng ngờ ngay tại Vigor3912S.</p></div>
   <div class="card"><h3>Switch: tắt cổng</h3><p>Ngắt cổng của thiết bị có dây nghi nhiễm để nó không thể lây sang các máy khác.</p></div>
@@ -172,7 +171,7 @@ Thì:  Thông báo quản trị viên, tắt cổng Switch hoặc cô lập máy
 </div></section>
 
 <section><div class="w">
- <h2>Một sự cố được xử lý như thế nào</h2>
+ <h2>Chuyện gì xảy ra khi một máy bị nhiễm?</h2>
  <ol class="flow">
   <li><div><b>Suricata và Zeek phát hiện</b><span>Máy trong mạng nhân viên kết nối ra máy chủ điều khiển. Suricata ghi cảnh báo, Zeek ghi lại toàn bộ phiên kết nối.</span></div></li>
   <li><div><b>Smart Action nhận log</b><span>Bộ lọc REGEX khớp Priority 1 hoặc từ khóa MALWARE, Exploit, Phishing, WORM, DOS.</span></div></li>
@@ -185,10 +184,11 @@ Theo họ tấn công:  (MALWARE|Exploit|Phishing|WORM|DOS)</pre>
 </div></section>
 
 <section class="cta" id="lien-he"><div class="w">
- <h2>Muốn thấy giải pháp chạy trên mạng của bạn?</h2>
+ <h2>Hệ thống của bạn đang gặp vấn đề gì? Kể An Phát nghe</h2>
  <p>Đội ngũ presales An Phát khảo sát hiện trạng, đề xuất sơ đồ VLAN và cấu hình Suricata, Zeek, Smart Action, DraySOAR phù hợp quy mô doanh nghiệp.</p>
+ <p style="font-size:.95rem;font-weight:700">Uy Tín | Chuyên Nghiệp | Hiện Đại | Gần Gũi</p>
  <div class="btns" style="justify-content:center"><a class="btn" href="https://anphat.vn">Liên hệ An Phát (ANPHAT.VN)</a></div>
 </div></section>
-<footer><div class="w">© An Phát Technology. DrayTek và Vigor là thương hiệu của DrayTek Corp. Thông số có thể thay đổi theo phiên bản firmware.</div></footer>
+<footer><div class="w">© An Phát Technology. Hiểu mạng, hiểu điều bạn cần. DrayTek và Vigor là thương hiệu của DrayTek Corp. Thông số có thể thay đổi theo phiên bản firmware.</div></footer>
 </body>
 </html>
